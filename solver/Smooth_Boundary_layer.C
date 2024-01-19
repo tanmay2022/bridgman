@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
     volVectorField dAdq01     = phi*vector(0,0,0);
     volVectorField dadgradPhi = q*0.0;
     int nucleation_event      = 0;
-volScalarField K = Ks*phi + Kl*(1-phi);
+//volScalarField K = Ks*phi + Kl*(1-phi);
 //volScalarField omega = epsilon*L*L*0.18/(Tm*K);
     
 //     #include "initializeFields.H"
@@ -85,7 +85,7 @@ volScalarField K = Ks*phi + Kl*(1-phi);
     while (runTime.loop()) {
       
       label curTimeIndex = mesh.time().timeIndex();
-      if (curTimeIndex <= 100) {
+      if (curTimeIndex <= 10) {
         #include "psiEqn_eq.H"
       } else {
       
