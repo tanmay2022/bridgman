@@ -102,6 +102,8 @@
     dimensionedScalar Kl(transportProperties.lookup("Kl"));                   //Thermal Conductivity(liquid)
     dimensionedScalar Vpull(transportProperties.lookup("Vpull"));                   //Thermal Conductivity
     dimensionedScalar Tm(transportProperties.lookup("Tm"));                 //Melting point
+    dimensionedScalar Tl(transportProperties.lookup("Tl"));                 //Liquidus 
+    dimensionedScalar Ts(transportProperties.lookup("Ts"));                 //Solidus
     dimensionedScalar Tinf(transportProperties.lookup("Tinf"));                 //Ambient temperature
     dimensionedScalar Bd(transportProperties.lookup("Bd"));                 //Dirichlet boundary temperature
 //     dimensionedScalar delta_01(transportProperties.lookup("delta_01"));     //strength of anisotropy

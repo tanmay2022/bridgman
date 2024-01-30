@@ -11,46 +11,39 @@ FoamFile
     format      ascii;
     class       dictionary;
     location    "system";
-    object      fvSchemes;
+    object      controlDict;
 }
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
-d2dt2Schemes
-{
-    default         steadyState;
-}
-ddtSchemes
-{
-    //default         CrankNicolson 0.9;
-   default          Euler;
-}
+application     Smooth_Boundary_layer_dim;
 
-gradSchemes
-{
-    default         Gauss linear;
-    grad(phi)         Gauss linear;
-}
+startFrom       startTime;
 
-divSchemes
-{
-    default         Gauss linear;
-}
+startTime       0; // the actual time i.e. runtime.value() or no. of iterations*deltaT
 
-laplacianSchemes
-{
-    default         Gauss linear corrected;
-    //laplacian(DT,T) Gauss linear corrected;
-}
+stopAt          endTime;
 
-interpolationSchemes
-{
-    default         linear;
-}
+endTime         10e1; //actual time = total_iterations*deltaT
 
-snGradSchemes
-{
-    default         corrected;
-}
+deltaT          5e-5;//0.10;//0.05;//0.20;
+
+writeControl    runTime;
+
+writeInterval   1; //0.40;
+
+purgeWrite      0;
+
+writeFormat     ascii;
+
+writePrecision  6;
+
+writeCompression off;
+
+timeFormat      general;
+
+timePrecision   6;
+
+runTimeModifiable true;
 
 
 // ************************************************************************* //

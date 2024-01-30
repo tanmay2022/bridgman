@@ -10,7 +10,7 @@ cd ${0%/*} || exit 1    # Run from this directory
 
 application=`getApplication`
 
-#runApplication blockMesh
+runApplication blockMesh
 
 #touch phaseField.foam
 
@@ -24,7 +24,7 @@ application=`getApplication`
 
 #rm muInitial muInitial.o
 
-#runApplication setFields
+runApplication setFields
 
 runApplication decomposePar
 
